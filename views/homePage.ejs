@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            ToDo App
+        </h1>
+
+        <form action="/" method="POST">
+            <label for="task_name">Description
+                <input type="text" name="task_name" id="task_name"  placeholder="What do you need to do?" required>
+            </label>
+
+            <br>
+            <br>
+
+            <label for="deadline"> Due Date
+                <input type="date" name="deadline" id="deadline">
+            </label>
+            
+            <label for="category">Category</label>
+            <select name="category" id="category" placeholder="Choose a category">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="school">School</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="other">Other</option>
+            </select>
+
+            <button type="submit" id="add-task-button">Add Task</button>
+            <button type="button" id="delete-button">Delete Task</button>
+        </form>
+    </body>
+</html>
