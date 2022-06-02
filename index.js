@@ -1,7 +1,14 @@
 const express = require('express');
 const app = express();
-
 const port = 8000;
+const db = require('./config/mongoose');
+const expressLayouts = require('express-ejs-layouts');
+
+// this statement needs to be present before layouts middleware
+app.use(express.static('./assets'));
+
+//a middleware for rendering the webpages acc.to the layouts.(NOTE: place this line before express-router...so that the router know how to render)
+app.use(expressLayouts);
 
 // use express router
 app.use('/', require('./routes/index'));
