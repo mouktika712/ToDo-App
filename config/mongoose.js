@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost/todo-app');
 const db = mongoose.connection;
 
 // if there is any error while connecting to the database...show this msg inside your console
-db.on('error', console.error.bing(console, 'Error connecting to the Database!'));
+db.on('error', console.error.bind(console, 'Error connecting to the Database!'));
 
 // once the connection is open... 
 db.once('open', function() {
