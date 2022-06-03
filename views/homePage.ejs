@@ -40,12 +40,13 @@
         </form>
 
 
-        <form action="/delete-task" method="post">
+        <form action="/delete-task" method="POST">
             <% for (let i of Tasks) { %>
                 <div>
                     <div>
                         <label for="task"> 
-                            <input type="checkbox" name="Tasks" value="<% i.description %>" id="task">
+                            <input type="checkbox" name="task" value="<%= i.description %>" id="task">
+
                             <%= i.description %>
                         </label>
                         <br>
@@ -58,7 +59,6 @@
                     </div>
                 </div>
             <% } %>
-
             <button type="submit">Delete Task</button>
     </form>
     </body>

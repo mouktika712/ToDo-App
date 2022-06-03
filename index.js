@@ -3,7 +3,7 @@ const app = express();
 const port = 8000;
 // const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
-const Task = require('./models/task');
+const TaskSchema = require('./models/task');
 
 
 
