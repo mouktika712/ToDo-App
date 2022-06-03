@@ -36,7 +36,6 @@
             <br>
             <br>
             <button type="submit" id="add-task-button">Add Task</button>
-            <!-- <button type="button" id="delete-button">Delete Task</button> -->
         </form>
 
 
@@ -45,7 +44,7 @@
                 <div>
                     <div>
                         <label for="task"> 
-                            <input type="checkbox" name="task" value="<%= i.description %>" id="task">
+                            <input type="checkbox" name="task[]" value="<%= i.description %>" id="task">
 
                             <%= i.description %>
                         </label>
