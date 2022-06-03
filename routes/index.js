@@ -17,5 +17,7 @@ router.get('/', homeController.homePage);
 //place the list of all the root-level requests here...using roter.use(path, require(route_name.js file));
 router.post('/create-task', require('./create_task'));
 
+router.post('/delete-task', require('./delete_task'));
+
 module.exports = router;
 

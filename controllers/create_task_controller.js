@@ -2,7 +2,6 @@
 const Task = require("../models/task");
 
 module.exports.create_task = function (req, res) {
-    // res.end('<h1 style = "color: orange"> Hey, I am a profile controller!! </h1>');
 
     Task.create({
         description: req.body.description,

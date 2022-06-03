@@ -36,29 +36,30 @@
             <br>
             <br>
             <button type="submit" id="add-task-button">Add Task</button>
-            <button type="button" id="delete-button">Delete Task</button>
+            <!-- <button type="button" id="delete-button">Delete Task</button> -->
         </form>
 
 
-        <% for (let i of Tasks) { %>
-            <div>
+        <form action="/delete-task" method="post">
+            <% for (let i of Tasks) { %>
                 <div>
-                    <label for="task"> 
-                        <input type="checkbox" name="Tasks" value="<% i.description %>" id="task">
-                        <%= i.description %>
-                    </label>
-                    <br>
-                    <span><i class="fa-solid fa-calendar-days"></i></span>
-                    <span> <%= i.deadline %> </span>
+                    <div>
+                        <label for="task"> 
+                            <input type="checkbox" name="Tasks" value="<% i.description %>" id="task">
+                            <%= i.description %>
+                        </label>
+                        <br>
+                        <span><i class="fa-solid fa-calendar-days"></i></span>
+                        <span id="dueDate"> <%= i.deadline %> </span>
+                    </div>
+                    
+                    <div>
+                        <%= i.category %>
+                    </div>
                 </div>
-                
-                <div>
-                    <%= i.category %>
-                </div>
-                <!-- <p> <%= i.description %> </p> -->
-                <!-- <p> <%= i.deadline %> </p> -->
-                
-            </div>
-        <% } %>
+            <% } %>
+
+            <button type="submit">Delete Task</button>
+    </form>
     </body>
 </html>
