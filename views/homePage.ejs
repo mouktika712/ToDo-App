@@ -5,60 +5,65 @@
         </title>
 
         <script src="https://kit.fontawesome.com/ebd0ac1dc8.js" crossorigin="anonymous"></script>
+        <link type="text/css" rel="stylesheet" href="/css/style.css">
     </head>
 
     <body>
-        <h1>
-            ToDo App
-        </h1>
+        <div id="app-container-div">
+            <h1 id="app-heading">
+                ToDo App
+            </h1>
 
-        <form action="/create-task" method="post">
-            <label for="task_name">Description
-                <input type="text" name="description" id="task_name"  placeholder="What do you need to do?" required>
-            </label>
+            <form action="/create-task" method="post" id="task-create-form">
+                <label for="task_name" class="input-fields" style="margin-right: 8x;">Task Name  
+                    <input type="text" name="description" id="task_name"  placeholder="What do you need to do?"
+                    class="input-fields" required>
+                </label>
 
-            <br>
-            <br>
+                <br>
+                <br>
 
-            <label for="deadline"> Due Date
-                <input type="date" name="deadline" id="deadline">
-            </label>
-            
-            <label for="category">Category</label>
-            <select name="category" id="category" placeholder="Choose a category">
-                <option value="personal">Personal</option>
-                <option value="work">Work</option>
-                <option value="school">School</option>
-                <option value="cleaning">Cleaning</option>
-                <option value="other">Other</option>
-            </select>
+                <label for="deadline"> Due Date
+                    <input type="date" name="deadline" id="deadline" 
+                    class="input-fields">
+                </label>
+                
+                <label for="category">Category</label>
+                <select name="category" id="category" placeholder="Choose a category" class="input-fields">
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="other">Other</option>
+                </select>
+                <br><br>
+                <button type="submit" id="add-task-button">Add Task</button>
+            </form>
 
-            <br>
-            <br>
-            <button type="submit" id="add-task-button">Add Task</button>
+
+            <form action="/delete-task" method="POST" id="task-checklist-form">
+                <% for (let i of Tasks) { %>
+                    <div class="task-card">
+                        <div>
+                            <label for="task"> 
+                                <input type="checkbox" name="task[]" value="<%= i.description %>">
+
+                                <%= i.description %>
+                            </label>
+                            <br>
+                            <span><i class="fa-solid fa-calendar-days" style="color: #f1ab32;"></i></span>
+                            <span id="dueDate" style="font-size: small;"> <%= i.deadline %> </span>
+                        </div>
+                        
+                        <div>
+                            <%= i.category %>
+                        </div>
+                    </div>
+                <% } %>
+                <button type="submit" id="delete-button">Delete Task</button>
         </form>
+    </div>
 
-
-        <form action="/delete-task" method="POST">
-            <% for (let i of Tasks) { %>
-                <div>
-                    <div>
-                        <label for="task"> 
-                            <input type="checkbox" name="task[]" value="<%= i.description %>" id="task">
-
-                            <%= i.description %>
-                        </label>
-                        <br>
-                        <span><i class="fa-solid fa-calendar-days"></i></span>
-                        <span id="dueDate"> <%= i.deadline %> </span>
-                    </div>
-                    
-                    <div>
-                        <%= i.category %>
-                    </div>
-                </div>
-            <% } %>
-            <button type="submit">Delete Task</button>
-    </form>
+    <script type="text/javascript" src="/JS/javaScript.js"></script>
     </body>
 </html>

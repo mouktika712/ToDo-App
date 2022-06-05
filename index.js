@@ -10,9 +10,6 @@ const TaskSchema = require('./models/task');
 // this statement needs to be present before layouts middleware
 app.use(express.static('./assets'));
 
-//a middleware for rendering the webpages acc.to the layouts.(NOTE: place this line before express-router...so that the router know how to render)
-// app.use(expressLayouts);
-
 app.use(express.urlencoded());
 
 // use express router

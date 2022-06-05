@@ -1,0 +1,77 @@
+
+* {
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+/* The container for whole app */
+#app-container-div {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    overflow: auto;
+    left: 35%;
+    background-color: white;
+    border: 3px solid rgb(206, 199, 199);
+    color: black;
+    border-radius: 20px;
+}
+
+/* Headiing of the app */
+#app-heading {
+    color: rgb(59, 56, 56);
+    text-align: center;
+}
+
+/* The form for Adding task Cards */
+#task-create-form {
+    font-size: 18px;
+    height: auto;
+    width: auto;
+    margin: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #f8c163;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* Styling the input fields of the form */
+.input-fields{
+    margin: 10px;
+    border: none;
+    height: 30px;
+    width: 260px;
+    border-radius: 15px;
+    padding-left: 10px; 
+    padding-right: 15px;
+}
+
+
+#task-checklist-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.task-card {
+    font-size: 20px;
+    margin: 10px;
+    min-height: 60px;
+    width: 85%;
+    border-left: 10px solid #f8c163;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }

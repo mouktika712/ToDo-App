@@ -1,12 +1,17 @@
 const taskSchema = require('../models/task');
 
 module.exports.delete_task = function (req, res) {
-    
-    const tasksToDelete = req.body.task;
+
+    if(Object.keys(req.body).length === 0) {
+        res.redirect('back');
+        return;
+    }
+
+    let tasksToDelete = req.body.task;
 
     for(let i = 0; i < tasksToDelete.length; i++) {
         
-        taskSchema.deleteMany({description: tasksToDelete[i]}).then(function() {
+        taskSchema.deleteOne({description: tasksToDelete[i]}).then(function() {
             console.log(`${tasksToDelete[i]} deleted successfully!`);
         }).catch(function (error) {
             console.log(error);

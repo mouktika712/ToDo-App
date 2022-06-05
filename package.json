@@ -13,10 +13,12 @@
   "author": "Mouktika Namde",
   "license": "ISC",
   "dependencies": {
+    "alert": "^5.0.11",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-ejs-layouts": "^2.5.1",
     "moment": "^2.29.3",
-    "mongoose": "^6.3.5"
+    "mongoose": "^6.3.5",
+    "popups": "^1.1.3"
   }
 }
