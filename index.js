@@ -1,24 +1,27 @@
+// Setting up exress
 const express = require('express');
 const app = express();
+// port
 const port = 8000;
-// const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const TaskSchema = require('./models/task');
 
 
 
-// this statement needs to be present before layouts middleware
+// Adding assets folder
 app.use(express.static('./assets'));
 
+// body-parser
 app.use(express.urlencoded());
 
 // use express router
 app.use('/', require('./routes/index'));
 
-// set-up the view engine
+// set-up the view engine: ejs
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// server
 app.listen(port, function(err) {
     if(err) {
         console.log(`Something went wrong on the server side!`);

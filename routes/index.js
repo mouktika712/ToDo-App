@@ -14,7 +14,7 @@ const homeController = require('../controllers/home_controller');
 // this will call the homePage() for '/'
 router.get('/', homeController.homePage);
 
-//place the list of all the root-level requests here...using roter.use(path, require(route_name.js file));
+//placing list of all the root-level requests here;
 router.post('/create-task', require('./create_task'));
 
 router.post('/delete-task', require('./delete_task'));

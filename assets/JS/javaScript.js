@@ -1,21 +1,21 @@
-// const Task = require("../../models/task");
+// let task_card = document.getElementsByClassName('task-card');
 
-// let checkboxArray = document.getElementsByClassName("checkbox");
-// let deleteBtn = document.getElementById("delete-button");
+// task_card.addEventListener('click', function () {
+//     task_card.style.text-decoratio
+// })
 
-// deleteBtn.addEventListener('click', function () {
-    
-//     let nothingChecked = true;
+console.log("javascript is loaded");
 
-//     for(let i of checkboxArray) {
-//         if(i.checked === true) {
-//             nothingChecked = false;
-//             break;
-//         }
-//     }
+let task = document.querySelectorAll('div.task-card');
 
-//     if(nothingChecked) {
-//         window.alert('Please select at least one item to delete!');
-//     }
-// });
-    
+// console.log(task);
+
+window.onload = function () {
+
+    task.forEach(element => {
+        element.addEventListener('click', function (event) {
+            
+        });
+    });
+}
+

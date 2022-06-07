@@ -4,66 +4,91 @@
             <%= title %>
         </title>
 
+        <!-- link for font-awesome icons -->
         <script src="https://kit.fontawesome.com/ebd0ac1dc8.js" crossorigin="anonymous"></script>
+
+        <!-- CSS stylesheet link -->
         <link type="text/css" rel="stylesheet" href="/css/style.css">
     </head>
 
     <body>
+        <!-- The main app container div -->
         <div id="app-container-div">
+
+            <!-- App Heading -->
             <h1 id="app-heading">
                 ToDo App
             </h1>
 
+            <!-- This form is for creating a task -->
             <form action="/create-task" method="post" id="task-create-form">
-                <label for="task_name" class="input-fields" style="margin-right: 8x;">Task Name  
+                <fieldset>
+                    <legend>Create Task</legend>
+
+                    <!-- Description/ Task Name -->
+                    <label for="task_name" class="input-fields" style="margin-right: 15x;">Task</label>
                     <input type="text" name="description" id="task_name"  placeholder="What do you need to do?"
                     class="input-fields" required>
-                </label>
 
-                <br>
-                <br>
+                    <br>
+                    <br>
 
-                <label for="deadline"> Due Date
-                    <input type="date" name="deadline" id="deadline" 
-                    class="input-fields">
-                </label>
-                
-                <label for="category">Category</label>
-                <select name="category" id="category" placeholder="Choose a category" class="input-fields">
-                    <option value="personal">Personal</option>
-                    <option value="work">Work</option>
-                    <option value="school">School</option>
-                    <option value="cleaning">Cleaning</option>
-                    <option value="other">Other</option>
-                </select>
-                <br><br>
+                    <!-- Deadline -->
+                    <label for="deadline"> Due Date
+                        <input type="date" name="deadline" id="deadline" 
+                        class="input-fields">
+                    </label>
+                    
+                    <!-- Category -->
+                    <label for="category">Category</label>
+                    <select name="category" id="category" placeholder="Choose a category" class="input-fields">
+                        <!-- options for category -->
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="college">College</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br><br>
+                </fieldset>
+
+                <!-- Add task button -->
                 <button type="submit" id="add-task-button">Add Task</button>
             </form>
 
 
-            <form action="/delete-task" method="POST" id="task-checklist-form">
-                <% for (let i of Tasks) { %>
-                    <div class="task-card">
-                        <div>
-                            <label for="task"> 
-                                <input type="checkbox" name="task[]" value="<%= i.description %>">
 
-                                <%= i.description %>
-                            </label>
-                            <br>
-                            <span><i class="fa-solid fa-calendar-days" style="color: #f1ab32;"></i></span>
-                            <span id="dueDate" style="font-size: small;"> <%= i.deadline %> </span>
+            <!-- This form is for individual task-cards: checkboxes-->
+            <!-- Multiple tasks can be deleted at a time by checking multiple tasks -->
+            <form action="/delete-task" method="POST" id="task-checklist-form">
+                    <% for (let i of Tasks) { %>
+                        <!-- div containing the individual task card -->
+                        <div class="task-card">
+                            <!-- div containing Task Name and Due date -->
+                            <div>
+                                <label for="task"> 
+                                    <input type="checkbox" name="task[]" value="<%= i.description %>">
+
+                                    <span class = "cut"> <%= i.description %> </span>
+                                </label>
+                                <br>
+                                <span><i class="fa-solid fa-calendar-days" style="color: lightcoral;"></i></span>
+                                <span id="dueDate" style="font-size: small;"> <%= i.deadline %> </span>
+                            </div>
+                            
+                            <!-- category -->
+                            <div>
+                                <%= i.category %>
+                            </div>
                         </div>
-                        
-                        <div>
-                            <%= i.category %>
-                        </div>
-                    </div>
-                <% } %>
+                    <% } %>
+                    <!-- This delete button can be used to delete multiple tasks -->
                 <button type="submit" id="delete-button">Delete Task</button>
         </form>
     </div>
 
+    <!-- Script tag for javaScript -->
     <script type="text/javascript" src="/JS/javaScript.js"></script>
     </body>
 </html>

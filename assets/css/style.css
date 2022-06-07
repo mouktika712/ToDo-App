@@ -1,5 +1,7 @@
 
 * {
+    margin: 0;
+    padding: 0;
     font-family: Verdana, Tahoma, sans-serif;
 }
 
@@ -14,28 +16,51 @@
     border: 3px solid rgb(206, 199, 199);
     color: black;
     border-radius: 20px;
+    background-color: whitesmoke;
 }
 
 /* Headiing of the app */
 #app-heading {
-    color: rgb(59, 56, 56);
+    height: 50px;
+    color: lightcoral;
     text-align: center;
+    top: 8px;
+    position: sticky;
+    z-index: 10;
+    text-shadow: 3px 3px lightgray;
+}
+
+/* Fieldset for creating a task */
+fieldset {
+    height: inherit;
+    width: 95%;
+    border-radius: 15px;
+    /* border: 2px solid lightseagreen; */
+    border: 4px solid lightcoral;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
 }
 
 /* The form for Adding task Cards */
 #task-create-form {
+    color: white;
+    position: sticky;
+    top: 50px;
+    z-index: 10;
     font-size: 18px;
     height: auto;
     width: auto;
     margin: 18px;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: #f8c163;
-    border-radius: 15px;
+    background-color: rgb(26, 26, 70);
+    /* background-color: #f8c163; */
+    border-radius: 10px; 
     text-align: center;
 }
 
-/* Styling the input fields of the form */
+/* Styling the input fields of the create task form */
 .input-fields{
     margin: 10px;
     border: none;
@@ -46,22 +71,39 @@
     padding-right: 15px;
 }
 
+/* The button for adding a task*/
+#add-task-button {
+    height: 35px;
+    width: 125px;
+    /* background-color: lightseagreen; */
+    background-color: lightcoral;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
 
+
+/* This is the task card form...which is a checklist */
 #task-checklist-form {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
+    position: sticky;
+    margin-top: 50px;
 }
 
+
+/* indivisual task card div */
 .task-card {
     font-size: 20px;
     margin: 10px;
     min-height: 60px;
-    width: 85%;
-    border-left: 10px solid #f8c163;
-    border-radius: 10px;
+    width: 83%;
+    /* border-left: 10px solid #f8c163; */
+    border-left: 10px solid rgb(26, 26, 70);
+    /* border-radius: 10px; */
     padding-left: 15px;
     padding-right: 15px;
     display: flex;
@@ -70,8 +112,51 @@
     align-items: center;
 }
 
-input[type="checkbox"]{
+
+.task-card:target {
+    text-decoration: line-through;
+}
+
+/* Changing the color on hovering over the task card */
+.task-card:hover{
+    background-color: rgb(187, 229, 255);
+    cursor: pointer;
+}
+
+/* adding some styles to the checkbox of checklist task */
+input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
+
+/* styling the delete button */
+#delete-button {
+    color: white;
+    background-color: rgb(199, 127, 127);
+    height: 35px;
+    width: 125px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styling the scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(171, 222, 253);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }

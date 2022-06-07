@@ -1,5 +1,7 @@
+// requiring express
 const express = require('express');
 
+// requiring express router
 const router = express.Router();
 
 // require the corresponding controller.js file
