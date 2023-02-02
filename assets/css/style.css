@@ -5,10 +5,15 @@
     font-family: Verdana, Tahoma, sans-serif;
 }
 
+/* class for line through */
+.line-through {
+    text-decoration: line-through;
+}
+
 /* The container for whole app */
 #app-container-div {
     position: relative;
-    width: 30%;
+    width: 32%;
     height: 100%;
     overflow: auto;
     left: 35%;

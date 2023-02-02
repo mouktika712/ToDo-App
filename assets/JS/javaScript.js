@@ -1,21 +1,21 @@
-// let task_card = document.getElementsByClassName('task-card');
 
-// task_card.addEventListener('click', function () {
-//     task_card.style.text-decoratio
-// })
+// for adding line through on the task when selected
+var checks = document.getElementsByName('task[]');
 
-console.log("javascript is loaded");
+console.log(checks);
 
-let task = document.querySelectorAll('div.task-card');
+// Adding event listener to all the elements in the array
+checks.forEach(function(check){
+  check.addEventListener('click', checkIndex);
+});
 
-// console.log(task);
+// function for adding line-through to the task name in task card
+function checkIndex(event){
+//   console.log( Array.from(checks).indexOf(event.target) );
 
-window.onload = function () {
+    let index = Array.from(checks).indexOf(event.target);
 
-    task.forEach(element => {
-        element.addEventListener('click', function (event) {
-            
-        });
-    });
+    let name = document.getElementsByClassName('task-name');
+
+    name[index].classList.toggle("line-through");
 }
-

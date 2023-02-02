@@ -66,11 +66,11 @@
                         <!-- div containing the individual task card -->
                         <div class="task-card">
                             <!-- div containing Task Name and Due date -->
-                            <div>
-                                <label for="task"> 
+                            <div class="first">
+                                <label for="task" class="task-name"> 
                                     <input type="checkbox" name="task[]" value="<%= i.description %>">
 
-                                    <span class = "cut"> <%= i.description %> </span>
+                                    <%= i.description %>
                                 </label>
                                 <br>
                                 <span><i class="fa-solid fa-calendar-days" style="color: lightcoral;"></i></span>
